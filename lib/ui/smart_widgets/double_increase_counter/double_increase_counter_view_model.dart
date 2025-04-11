@@ -1,14 +1,14 @@
-import 'package:get_it_demo/app/locator.dart';
+import 'package:get_it_demo/services/counter_service.dart';
 import 'package:stacked/stacked.dart';
 
-import '../../../../services/counter_service.dart';
+import '../../../app/locator.dart';
 
-class SingleIncreaseCounterViewModel extends ReactiveViewModel {
+class DoubleIncreaseCounterViewModel extends ReactiveViewModel {
   final _counterService = locator<CounterService>();
   int get counter => _counterService.counter;
 
   void updateCounter() {
-    _counterService.incrementCounter();
+    _counterService.doubleCounter();
     notifyListeners();
   }
 
